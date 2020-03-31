@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet'); 
+#whole1{
+    font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+#edu1{
+    width: 165px; 
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+#edu2{
+    width: 70px;
+    height: 50px;
+    padding-top: -40px;
+    padding-bottom: -40px;
+}
+.home{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+#cat{
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+#books{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    width: 175px;
+}
+#borrow{
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+}
+#side{
+    width: 250px;
+    height: 872px;
+    background-color: rgb(190, 176, 241);
+}
+#area{
+   
+    width: 1050px;
+    height: 700px;
+}
+#sea{
+    padding-top: 40px;
+    margin-left: 350px;
+    width: 400px;
+}
+#txt{
+    width: 500px;
+    height: 150px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+#time{
+    width: 470px;
+    height: auto;
+    background-color: rgb(185, 183, 189);
+    border-color: black;
+    border: thin solid;
+    border-radius: 10px;
+    float: right;
+    margin-top: -150px;
+    padding: 10px;
+}
+#event{
+    width: 500px;
+    height: auto;
+    background-color: rgb(185, 183, 189);
+    border-color: black;
+    /* border-style: solid 5px; */
+    border-radius: 10px;
+    border: thin solid;
+    margin-top: 140px;
+    padding: 10px;
+    font-size: 18px;
+    margin-left: 20px;
+}
+#new{
+    width: 400px;
+    height: auto;
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(185, 183, 189);
+    border-color: black;
+    border: thin solid;
+    border-radius: 10px;
+    margin-top: -390px;
+
+}
+#footr{
+    height: 50px;
+    text-align: center;
+    background-color: rgb(113, 139, 187);
+    margin-top: 20px;
+}
+#fb{
+    width: 60px;
+    height: 60px;
+    margin-top:-42px;
+}
+#twt{
+    width: 85px;
+    height: 85px;
+    margin-top:-45px;
+    margin-left: -20px;
+}
