@@ -93,6 +93,10 @@ body{
     align-items: stretch;
     justify-content: space-between;
     flex-grow: 0;
+      background-image: url(images/mine.png);
+      filter: grayscale();
+
+    
 }
 
 .home-main-section .img-wrapper{
@@ -104,7 +108,7 @@ body{
 }
 
 .home-main-section .books-image{
-    background-image: url(images/books-1246674_1920.jpg);
+    background-image: url(images/black-and-white-4270982_1280.png);
     flex-grow: 1;
     max-height: 70vh;
     min-width: 30vw;
@@ -161,6 +165,19 @@ input[type=submit]{
 }
 
 input[type=submit]:hover{
+    background-color:grey;
+}
+input[type=button]{
+    background-color: black;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=button]:hover{
     background-color:grey;
 }
 
