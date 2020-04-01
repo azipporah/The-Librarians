@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Dashboard1</title>
         <link rel="stylesheet" type="text/css" href="./dash1.css"> 
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -18,22 +19,46 @@
                 <div class="home home-image" style="width: 100px;">
                     <i class="glyphicon glyphicon-home" style="font-size: 40px;"></i>
                     <a id="anc" href="#">                        
-                        <div style="padding-top: 20px;"><h4>Home</h4></div>
+                        <div style="padding-top: 20px;color: black;"><h4>Home</h4></div>
                     </a>
                 </div><br> 
                 <div id="cat">
                     <i class="glyphicon glyphicon-th-list" style="font-size: 35px; margin-left: 5px;"></i>
-                    <a href="#"><h4 style="padding-top: 15px;;">Categories</h4></a>
+                    <a href="#"><h4 style="padding-top: 15px;color: black;">Categories</h4></a>
                 </div><br>             
                 <div id="books" >
                     <img  src="images/manyBooks.png" style="width: 40px; height: 40px; padding-top: 5px;">
-                    <a href="#"><h4 style="padding-top: 15px;">Available books</h4></a>
+                    <a href="#"><h4 style="padding-top: 15px;color: black;">Available books</h4></a>
                 </div><br>
                 <div id="borrow" style="width: 200px;">
                     <img src="images/borrowed.png" style="width: 60px; height: 60px; margin-left: 10px; padding-right:-30px">
-                    <a href="#"><h4 style="padding-top: 20px; ">Borrowed books</h4></a>
-                </div>
+                    <a href="#"><h4 style="padding-top: 20px; color: black;">Borrowed books</h4></a>
+                </div><br>
+                <div id="know" style="width: 200px;">
+                    <img src="images/share.png" style="width: 45px; height: 45px; margin-left: 20px;padding-right:-30px">
+                    <a href="#"><h4 style="padding-top: 10px; padding-left:35px; color: black;">Know about:</h4></a>
+                </div><br>
+                
+                <div id="evnts" style="color: black;padding-left: 75px"><a href="#" style="color: black;"><h4 onclick="displayEvents()">Upcoming events</h4></a></div><br><br>
+                <div id="nw" style="color: black;padding-left: 75px"><a href="#" style="color: black;"><h4 onclick="displayNew()">New Arrivals</h4></a></div>
+
             </div>
+            <!-- <script>
+                function switchPage(){
+                    let lgp = document.getElementById("lgp");
+                    let sgnp = document.getElementById("sign");
+                    let lgn = document.getElementById("home");
+                    let hme = document.getElementById("home");
+                    let lf = document.getElementById("home");
+                    let stdnt = document.getElementById("home");
+                    let sfm = document.getElementById("home");
+                    if(lgp.status === "inactive"){
+                        lgp.status = "active";
+                    }else if(sgnp.status === "inactive"){
+                        lgp.status = "active";
+                    }
+                }
+            </script> -->
             <div id="area">                
                 <div  id="sea" class="input-group">
                     <input type="text" class="form-control" placeholder="Search " style="color: rgb(102, 169, 207); font-size: 14px; font-family: Poppins; border-radius: 10px; border-bottom-right-radius: 0%;border-top-right-radius: 0%;">
@@ -41,13 +66,31 @@
                         <button class="btn btn-secondary" type="button">
                             <i class="fa fa-search"></i>
                         </button>
+                    </div>            
+                      
+                    <!--Working hours-->
+                    <div style="float: right;width: 150px;"><button class="btn btn-secondary" style=" margin-left: 120px; margin-top: -38px;margin-left: 100px;" onclick="myHours()">Working hours</button></div>
+                    <script>
+                        function myHours() {
+                          var work = document.getElementById("time");
+                          if (work.style.display === "none") {
+                            work.style.display = "block";
+                          } else {
+                            work.style.display = "none";
+                          }
+                        }
+                    </script>
+
+                     <!--User icon on the top-right of the home page-->
+                    <div style=" float: right;width: 150px;height: 50px;">
+                        <a href="#"><i class="fa fa-user-o fa-3x" aria-hidden="true" style="float: right; margin-top: -30px;" ></i></a>
+                        <h4 style=" margin-left: 85px; margin-top: -20px;">User</h4>
                     </div>
                 </div>
-                <div id="txt">
-                    <h1 style="font-size: 500%; color: rgb(102, 169, 207);">Borrow </h1>
-                    <h2 style="font-size: 400%; color: rgb(102, 169, 207);">hardcopy and e-books </h2>
-                    <h3 style="font-size: 250%; color: rgb(102, 169, 207);">free from EduLibrary.</h3>
-                </div>
+                <p >
+                    <h1 style="font-size: 500%; color: black; text-align: center;">DISCOVER</h1>
+                    <h2 style="font-size: 400%; color: black; text-align: center;">Discover something new!!</h2>
+                </p>
                 <div id="time">
                     <h1>Working hours:</h1>
                     <ol style="font-size: 18px;">
@@ -59,54 +102,67 @@
                         <li>Saturday:  10:00am - 3:00pm</li>
                     </ol>
                 </div>
-                <div id="event">
-                    <h1>Upcoming events:</h1>
-                    <ol>
-                        <li>Guest speaker from the impaired society of Uganda.
-                            <ul>
-                                <li>Date: 22nd April 2020.</li>
-                                <li>Time: 2:00pm - 4:00pm</li>
-                                <li>Venue: Outbox conference room.</li>
-                                <li>Location: Outbox 4th Floor, Soliz House,Plot 23 Lumumba Ave, Kampala-Uganda. </li>
-                            </ul>
-                        </li>
-                        <li>Project presentaion.
-                            <ul>
-                                <li>Date: 3rd April 2020.</li>
-                                <li>Time: 9:00am</li>
-                                <li>Medium: Zoom cnference calls.</li>
-                                <li style="color: red;">A must attend for all.</li>
-                            </ul>
-                        </li>
-                    </ol>
+                
+                    <div id="event">
+                        <h1>Upcoming events:</h1>
+                        <ol>
+                            <li>Guest speaker from the impaired society of Uganda.
+                                <ul>
+                                    <li>Date: 22nd April 2020.</li>
+                                    <li>Time: 2:00pm - 4:00pm</li>
+                                    <li>Venue: Outbox conference room.</li>
+                                    <li>Location: Outbox 4th Floor, Soliz House,Plot 23 Lumumba Ave, Kampala-Uganda. </li>
+                                </ul>
+                            </li>
+                            <li>Project presentaion.
+                                <ul>
+                                    <li>Date: 3rd April 2020.</li>
+                                    <li>Time: 9:00am</li>
+                                    <li>Medium: Zoom conference calls.</li>
+                                    <li style="color: red;">A must attend for all.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div id="new">
+                        <div style="font-size: 14px;width: 200px;">
+                            <h1>New Books!!</h1>
+                            <img src="images/elonMusk.png" alt="Elon Mask" style="width: 170px; height: 240px;">
+                            <div>
+                                <p><strong>Title: </strong>Elon Mask</p>
+                                <p><strong>Author: </strong>Ashlee Vance</p>
+                                <p><strong>Price: </strong>000Ug.shs a week.</p>
+                            </div>
+                        </div>
+                        <div style="font-size: 14px;width: 250px;margin-top: -335px;margin-left: 250px;">
+                            <img src="images/2ndMachineAge.png" alt="2ndMachineAge" style="width: 170px; height: 242px; ">
+                            <div >
+                                <p><strong>Title:</strong>The Second Machine Age.</p>
+                                <p><strong>Author:</strong>Andrew McCafe.</p>
+                                <p><strong>Price:</strong>5000Ug.shs a week.</p>
+                            </div>  
+                        </div>
+                    </div>
+
+                <div id="footr" class="footer text-center">
+                    <div style="padding-top: 10px;"><h5 style="margin-left: -170px;">Follow us</h5></div>
+                    <img id="fb" src="images/fb1.png" alt="facebook">
+                    <img id="twt" src="images/twitter1.png" alt="twitter">
                 </div>
-                <div id="new">
-                    <div style="font-size: 14px;">
-                        <h1>New Books!!</h1>
-                        <img src="images/elonMusk.png" alt="Elon Mask" style="width: 150px; height: 240px;">
-                        <ul>
-                            <li>Title: Elon Mask</li>
-                            <li>Author: Ashlee Vance</li>
-                            <li>Price:5000Ug.shs a week.</li>
-                        </ul>
-                    </div>
-                    <div style="font-size: 14px;">
-                        <img src="images/2ndMachineAge.png" alt="2ndMachineAge" style="width: 150px; height: 272px;padding-top: 34px; margin-left: 50px;">
-                        <ul>
-                            <li>Title:The Second Machine Age.</li>
-                            <li>Author:Andrew McCafe</li>
-                            <li>Price: 5000Ug.shs a week.</li>
-                        </ul>  
-                    </div>
-                </div>
-                <footer>
-                    <div id="footr" class="text-center">
-                        <div style="padding-top: 10px;"><h5 style="margin-left: -170px;">Follow us</h5></div>
-                        <img id="fb" src="images/fb1.png" alt="facebook">
-                        <img id="twt" src="images/twitter1.png" alt="twitter">
-                    </div>
-                </footer>
             </div>
+            
         </div>
+        
+        <script>
+            
+            function displayEvents(){
+                document.getElementById("event").setAttribute("style","display:block");
+            }
+           
+            function displayNew(){
+                document.getElementById("new").setAttribute("style","display:block");
+               
+            }
+        </script>
     </body>
 </html>
