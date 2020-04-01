@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet');
+
+body{
+    font-family: Tahoma;
+    color: #444;
+    letter-spacing: 1px;
+     font-family: 'Poppins', sans-serif;
+}
+
+h1, h2{
+    font-weight: normal;
+}
+
+#wrapper{
+    width: 90%;
+    max-width: 960px;
+    margin: 20px auto;
+    border-radius: 6px;
+    box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    padding: 0 0 20px;
+    overflow: hidden;
+    border: 1px solid #DCD6F7 ;
+}
+
+#page-banner{
+    background: #eee ;
+    padding: 10px 0;
+
+}
+
+#page-banner h1, #page-banner p{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#page-banner input{
+    width: 90%;
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #444;
+}
+
+#book-list, #add-book, #tabbed-content{
+    margin: 30px;
+}
+
+#book-list ul, #tabbed-content ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+#book-list li{
+    padding: 20px;
+    border-left: 5px solid #ddd;
+    margin: 20px 10px;
+}
+
+#book-list li:hover{
+    border-color: green;
+}
+
+.delete{
+    float: right;
+    background: green;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+.delete:hover{
+    background: #333;
+}
+
+#add-book{
+    width: 400px;
+    margin: 0 auto;
+}
+
+#add-book input{
+    display: block;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 4px 0 0 4px;
+    box-sizing: border-box;
+    width: 300px;
+    float: left;
+    clear: both;
+}
+
+#add-book button{
+    border: 1px solid #9361bf;
+    background: #9361bf;
+    padding: 10px 20px;
+    font-size: 16px;
+    display: inline-block;
+    margin: 0;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    width: 100px;
+    float: left;
+    margin: 20px 0;
+    border-left: 0;
+    color: white;
+}
+
+#add-book:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#add-book #hide{
+  width: 30px;
+}
+
+#add-book label{
+  line-height: 52px;
+}
+
+#tabbed-content li{
+    display: inline-block;
+    padding: 10px 14px;
+    /* background: #ddd; */
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#tabbed-content .panel{
+    display: none;
+    /* border:; */
+    padding: 0 10px;
+    border-radius: 4px;
+}
+
+#tabbed-content .panel.active{
+    display: block;
+}
+
+
+
+.dropbtn {
+  /* background-color: ; */
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color:purple ;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Style the side navigation */
+.sidenav {
+  height:100%;
+  padding-bottom: 80px;
+  padding-right: 800px;
+  width: 200px;
+  position: fixed;
+
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:#DCD6F7;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+
+/* Side navigation links */
+.sidenav a{
+  color: black;
+  padding:  16px;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  font-size: 17px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color:purple;
+  color: black;
+
+}
+
+
+/* Style the content */
+.content {
+  margin-left: 200px;
+  padding-left: 20px;
+}
+
+
+input[type=button]{
+    border: none;
+
+}
+
+.footer{
+background-color: #6D98C0;
+/* display: flex; */
+/* justify-content: space-around; */
+width: 100%;
+text-align: center;
+/* position: relative; */
+/* left: auto;
+bottom: 0; */
+
+
+}
+    @media screen and (max-height: 0px) {
+        .sidenav {padding: 15px;}
+        .sidenav a {font-size: 18px;}
+    }
