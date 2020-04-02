@@ -53,7 +53,7 @@ regEx();
 
 
     const data = new Array();
-    //const data = [];
+   
    
     function insert() {
       data.push(document.getElementById('username').value);
