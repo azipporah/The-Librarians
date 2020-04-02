@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Dashboard1</title>
-        <link rel="stylesheet" type="text/css" href="./dash1.css"> 
+        <link rel="stylesheet" type="text/css" href="./addDelete.css"> 
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -43,37 +43,7 @@
                 <div id="nw" style="color: black;padding-left: 75px"><a href="#" style="color: black;"><h4 onclick="displayNew()">New Arrivals</h4></a></div>
 
             </div>
-            <!-- <script>
-               var row = 1;
-               var enter = document.getElementById("entry");
-               enter.addEventListener("click",displayInput);
-               
-               function displayInput(){
-                   var Title = document.getElementById("title").value;
-                   var Author = document.getElementById("author").value;
-                   var Price = document.getElementById("price").value;
-                   
-                   if(!Title || !Author || !Price){
-                       alert("Please enter all details.");
-                       return;
-                   }
-               }
-
-               function displayTable(){
-                   var table = document.getElementById("tab");
-                   var newRow = display.insertRow(row);
-
-                   var cell1 = newRow.insertCell(o);
-                   var cell2 = newRow.insertCell(1);
-                   var cell3 = newRow.insertCell(2);
-
-                   cell1.innerHTML = Title;
-                   cell2.innerHTML = Author;
-                   cell3.innerHTML = Price;
-
-                   row++;
-               }
-            </script> -->
+           
             <div id="area">                
                 <div  id="sea" class="input-group">
                     <input type="text" class="form-control" placeholder="Search " style="color: rgb(102, 169, 207); font-size: 14px; font-family: Poppins; border-radius: 10px; border-bottom-right-radius: 0%;border-top-right-radius: 0%;">
@@ -101,14 +71,52 @@
                         <a href="#"><i class="fa fa-user-o fa-3x" aria-hidden="true" style="float: right; margin-top: -30px;" ></i></a>
                         <h4 style=" margin-left: 85px; margin-top: -20px;">User</h4>
                     </div>
+                    <div class="container" style=" overflow:hidden; margin-top: 100px; font-size: 14px;">
+                        <table id="table" class="table table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Price</th>
+                                </tr>
+                                <tr>
+                                    <td>Love</td>
+                                    <td>Emmmerson Blair</td>
+                                    <td>3000</td>
+                                </tr>
+                                <tr>
+                                    <td>Javascript</td>
+                                    <td>Deitel</td>
+                                    <td>5000</td>
+                                </tr>
+                                <tr>
+                                    <td>Human analogy</td>
+                                    <td>Shannon James</td>
+                                    <td>4500</td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <div class="form-group form-inline">                              
+                            <input required id="title" type="text" class="form-control"  placeholder="Title">
+                            <input required id="author" type="text" class="form-control" placeholder="Author">
+                            <input required id="price" type="text" class="form-control" placeholder="Price" >
+                            
+                        </div>
+                        <div >
+                            <button id="entry" type="submit" class="btn btn-default" onclick="addingBook();">Add</button>
+                            <button id="edit" type="submit" class="btn btn-default" onclick="editSelectedRow();">Edit</button>
+                            <button id="dlt" type="submit" class="btn btn-default" onclick="removeSelectedRow();">Delete</button>                                  
+                                         
+                        </div>
+                    </div> 
                 </div>
-                <p >
-                    <h1 style="font-size: 500%; color: black; text-align: center;">DISCOVER</h1>
-                    <h2 style="font-size: 400%; color: black; text-align: center;">Discover something new!!</h2>
-                </p>
+                
+                <h1 style="font-size: 500%; color: black; text-align: center;">DISCOVER</h1>
+                <h2 style="font-size: 400%; color: black; text-align: center;">Discover something new!!</h2>
+                
                 <div id="time">
                     <h1>Working hours:</h1>
-                    <ol style="font-size: 18px;">
+                    <ol style="font-size: 12px;">
                         <li>Monday:    10:00am - 5:00pm</li>
                         <li>Tuesday:   10:00am - 5:00pm</li>
                         <li>Wednesday: 10:00am - 5:00pm</li>
@@ -169,7 +177,8 @@
         </div>
         
         <script>
-            
+            var rIndex;
+            var table = document.getElementById("table");
             function displayEvents(){
                 document.getElementById("event").setAttribute("style","display:block");
             }
@@ -178,6 +187,64 @@
                 document.getElementById("new").setAttribute("style","display:block");
                
             }
+
+                //get the table by id
+                //create a new row and cells
+                //get values from input text
+                //set values into row cells  
+                function addingBook(){                                   
+                    var newRow = table.insertRow(table.length);
+
+                    var cell1 = newRow.insertCell(0);
+                    var cell2 = newRow.insertCell(1);
+                    var cell3 = newRow.insertCell(2);
+
+                    var Title = document.getElementById("title").value;
+                    var Author = document.getElementById("author").value;
+                    var Price = document.getElementById("price").value;
+
+                    cell1.innerHTML = Title;
+                    cell2.innerHTML = Author;
+                    cell3.innerHTML = Price;
+
+                    bookRowToInput();
+                }
+
+                
+               //getting row index
+               function bookRowToInput(){
+                   
+                   for(var i = 1; i < table.rows.length; i++){
+                       
+                     table.rows[i].onclick = function(){
+                         //get the selected row index
+                        rIndex = this.rowIndex;
+                        document.getElementById("title").value = this.cells[0].innerHTML;
+                        document.getElementById("author").value = this.cells[1].innerHTML;
+                        document.getElementById("price").value = this.cells[2].innerHTML;
+                        
+                    };
+                   }
+               }
+               //call the function to set the event to the new row
+               bookRowToInput();
+
+               //edit a selected row
+                function editSelectedRow(){
+                   var Title = document.getElementById("title").value;
+                   var Author = document.getElementById("author").value;
+                   var Price = document.getElementById("price").value;
+
+                   table.rows[rIndex].cells[0].innerHTML = Title;
+                   table.rows[rIndex].cells[1].innerHTML = Author;
+                   table.rows[rIndex].cells[2].innerHTML = Price;
+               }
+
+              //delete a row from a table
+               function removeSelectedRow(){
+                   table.deleteRow(rIndex);
+               }
+            
         </script>
     </body>
 </html>
