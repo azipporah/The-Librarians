@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+<title>Science Books</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="/available.js"></script>
+<link rel="stylesheet" href="/books.css">
+
+</head>
+<body>
+
+<div class="sidenav">
+    <div id="edu1">
+    <a href="index.html"></a>    <img id="edu2" src="images/edu.png">
+       </a>
+     </div>
+   
+  <a href="index.html"><i class="fa fa-home" style="font-size:25px"></i> Home</a>
+  
+
+     
+  <button class="dropbtn" onclick="myDropdown()"> <i class="fa fa-list" style="font-size:25px"></i> Categories 
+      <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="myDropdown" class="dropdown-content">
+      <a href="./science.html">Science</a>
+       <a href="./math.html">Mathematics</a>
+        <a href="tech.html">Tech Books</a>
+  
+ </div>
+  <a href="#"><i class="fa fa-book" style="font-size:25px"></i> Books</a>
+  <a href="#"><i class="fa fa-check-square-o" style="font-size:25px"></i>   Borrowed</a>
+  
+</div>
+
+<div class="content">
+ 
+  	<div id="wrapper">
+	    <header>
+	    	<div id="page-banner">
+	    		<h1 class="title">Science</h1>
+          <p></p>
+          <form id="search-books">
+            <input type="text" placeholder="Search books..." id="myInput" onkeyup="myFunction()" />
+          </form>
+	    	</div>
+	    </header>
+	    <div id="book-list">    
+	    	<h2 class="title">Books to Read</h2>
+	    	<ul id="myUL">
+	    		<li>
+	    			<span class="name">Modern Physics</span>
+	    			<span class="delete">
+                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                    </span>
+                    
+	    		</li>
+	    		<li>
+                    <span class="name">Chemistry in Action</span>
+                    
+	    			<span class="delete">
+                        <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+	    		</li>
+	    		<li>
+	    			<span class="name">Introduction to Biology</span>
+	    			<span class="delete">
+                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                    </span>
+	    		</li>
+	    		<li>
+	    			<span class="name">Nelkon and Parker</span>
+	    			<span class="delete">
+                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                    </span>
+                </li>
+                <li>
+	    			<span class="name">Fluid Mechanics</span>
+	    			<span class="delete">
+                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                    </span>
+                </li>
+                 <li>
+	    			<span class="name">Blood Transfusion and Cells</span>
+	    			<span class="delete">
+                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                    </span>
+                </li>
+                 <li>
+	    			<span class="name">Botany</span>
+	    			<span class="delete">
+                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                    </span>
+	    		</li>
+	    	</ul>
+	    </div>
+</div>
+
+
+<div class="footer">
+        <div>
+        <i class="fa fa-facebook-square" style="font-size:36px"></i>
+        <i class="fa fa-twitter-square" style="font-size:36px"></i>
+        <i class="fa fa-snapchat-square" style="font-size:36px"></i>
+    </div>
+
+
+</body>
+</html>
