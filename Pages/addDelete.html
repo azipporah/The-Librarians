@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script src="addDelete.js"></script>
     </head>
     <body>
         <div id="whole1">
@@ -55,26 +56,17 @@
                       
                     <!--Working hours-->
                     <div style="float: right;width: 150px;"><button class="btn btn-secondary" style=" margin-left: 120px; margin-top: -38px;margin-left: 100px;" onclick="myHours()">Working hours</button></div>
-                    <script>
-                        function myHours() {
-                          var work = document.getElementById("time");
-                          if (work.style.display === "none") {
-                            work.style.display = "block";
-                          } else {
-                            work.style.display = "none";
-                          }
-                        }
-                    </script>
+                   
 
                      <!--User icon on the top-right of the home page-->
                     <div style=" float: right;width: 150px;height: 50px;">
                         <a href="#"><i class="fa fa-user-o fa-3x" aria-hidden="true" style="float: right; margin-top: -30px;" ></i></a>
                         <h4 style=" margin-left: 85px; margin-top: -20px;">User</h4>
                     </div>
-                    <div class="container" style=" overflow:hidden; margin-top: 100px; font-size: 14px;">
-                        <table id="table" class="table table-bordered ">
+                    <div class="container" style=" overflow:hidden; margin-top: 50px; font-size: 14px;">
+                        <table id="table" class="table table-bordered" style="width: 800px;">
                             <thead>
-                                <tr>
+                                <tr style="background-color: rgb(190, 176, 241);">
                                     <th>Title</th>
                                     <th>Author</th>
                                     <th>Price</th>
@@ -97,23 +89,19 @@
                             </thead>
                         </table>
                         <div class="form-group form-inline">                              
-                            <input required id="title" type="text" class="form-control"  placeholder="Title">
-                            <input required id="author" type="text" class="form-control" placeholder="Author">
-                            <input required id="price" type="text" class="form-control" placeholder="Price" >
+                            <input required id="title" type="text" class="form-control"  placeholder="Title" style="width: 150px;">
+                            <input required id="author" type="text" class="form-control" placeholder="Author" style="width: 150px;">
+                            <input required id="price" type="text" class="form-control" placeholder="Price" style="width: 150px;">
                             
                         </div>
                         <div >
-                            <button id="entry" type="submit" class="btn btn-default" onclick="addingBook();">Add</button>
-                            <button id="edit" type="submit" class="btn btn-default" onclick="editSelectedRow();">Edit</button>
-                            <button id="dlt" type="submit" class="btn btn-default" onclick="removeSelectedRow();">Delete</button>                                  
-                                         
+                            <button id="entry" type="button" class="btn btn-primary" onclick="addingBook();">Add</button>
+                            <button id="edit" type="button" class="btn btn-primary" onclick="editSelectedRow();">Edit</button>
+                            <button id="dlt" type="button" class="btn btn-danger" onclick="removeSelectedRow();">Delete</button>                                  
+                                     
                         </div>
                     </div> 
                 </div>
-                
-                <h1 style="font-size: 500%; color: black; text-align: center;">DISCOVER</h1>
-                <h2 style="font-size: 400%; color: black; text-align: center;">Discover something new!!</h2>
-                
                 <div id="time">
                     <h1>Working hours:</h1>
                     <ol style="font-size: 12px;">
@@ -167,84 +155,14 @@
                         </div>
                     </div>
 
-                <div id="footr" class="footer text-center">
-                    <div style="padding-top: 10px;"><h5 style="margin-left: -170px;">Follow us</h5></div>
-                    <img id="fb" src="images/fb1.png" alt="facebook">
-                    <img id="twt" src="images/twitter1.png" alt="twitter">
+                <div class="footer">
+                    <div>
+                    <i class="fa fa-facebook-square" style="font-size:36px"></i>
+                    <i class="fa fa-twitter-square" style="font-size:36px"></i>
+                    <i class="fa fa-snapchat-square" style="font-size:36px"></i>
                 </div>
             </div>
             
-        </div>
-        
-        <script>
-            var rIndex;
-            var table = document.getElementById("table");
-            function displayEvents(){
-                document.getElementById("event").setAttribute("style","display:block");
-            }
-           
-            function displayNew(){
-                document.getElementById("new").setAttribute("style","display:block");
-               
-            }
-
-                //get the table by id
-                //create a new row and cells
-                //get values from input text
-                //set values into row cells  
-                function addingBook(){                                   
-                    var newRow = table.insertRow(table.length);
-
-                    var cell1 = newRow.insertCell(0);
-                    var cell2 = newRow.insertCell(1);
-                    var cell3 = newRow.insertCell(2);
-
-                    var Title = document.getElementById("title").value;
-                    var Author = document.getElementById("author").value;
-                    var Price = document.getElementById("price").value;
-
-                    cell1.innerHTML = Title;
-                    cell2.innerHTML = Author;
-                    cell3.innerHTML = Price;
-
-                    bookRowToInput();
-                }
-
-                
-               //getting row index
-               function bookRowToInput(){
-                   
-                   for(var i = 1; i < table.rows.length; i++){
-                       
-                     table.rows[i].onclick = function(){
-                         //get the selected row index
-                        rIndex = this.rowIndex;
-                        document.getElementById("title").value = this.cells[0].innerHTML;
-                        document.getElementById("author").value = this.cells[1].innerHTML;
-                        document.getElementById("price").value = this.cells[2].innerHTML;
-                        
-                    };
-                   }
-               }
-               //call the function to set the event to the new row
-               bookRowToInput();
-
-               //edit a selected row
-                function editSelectedRow(){
-                   var Title = document.getElementById("title").value;
-                   var Author = document.getElementById("author").value;
-                   var Price = document.getElementById("price").value;
-
-                   table.rows[rIndex].cells[0].innerHTML = Title;
-                   table.rows[rIndex].cells[1].innerHTML = Author;
-                   table.rows[rIndex].cells[2].innerHTML = Price;
-               }
-
-              //delete a row from a table
-               function removeSelectedRow(){
-                   table.deleteRow(rIndex);
-               }
-            
-        </script>
+        </div>           
     </body>
 </html>
