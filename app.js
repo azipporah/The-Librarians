@@ -20,7 +20,8 @@
     }
     testEmail();
     testName();
-    insert();
+    insetName();    
+    
     }
 
     
@@ -30,13 +31,14 @@ function validate(){
 	let password1 = document.getElementById("password").value;
  
 	let name = ["cris","doe"];
-	let pass = ["123","111"];
+    let pass = ["123","111"];
+    
 
 	for (let i = 0; i < name.length; i++) {
 		
 		if (username1 == name[i] && password1 == pass[i]) {
-		alert ("welcome!");
-		window.location = "cris.html";
+		alert ("Succefully Logged in!");
+		window.location = "dashboard.html";
 		return false;
 	}
 	else{
@@ -44,13 +46,14 @@ function validate(){
 		alert ("invalid user name or password");
 		document.getElementById("submit").disable = true;
 	}
-
+regEx();
 
 }
 }
 
 
     const data = new Array();
+    //const data = [];
    
     function insert() {
       data.push(document.getElementById('username').value);
@@ -62,17 +65,18 @@ function validate(){
       document.getElementById('username').value ='';
       document.getElementById('password').value ='';
       document.getElementById('email').value ='';
+
       
       disp();
            }
             function disp() {
-                window.location = 'cris.html';
+                window.location = 'dashboard.html';
                 var str ='';
                 str = 'total is ' + data.length+ '<br>';
                 for (i=0; i < data.length; i++) {
                     str += i + ':' +data[i]+ "<br>";
                 }
-                alert ("successfully logged in");    
+                alert ("Successfully Registered. Welcome!");    
               
                  }
                 
