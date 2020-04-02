@@ -70,7 +70,7 @@ regEx();
       disp();
            }
             function disp() {
-                window.location = 'dashboard.html';
+                window.location = 'dash1.html';
                 var str ='';
                 str = 'total is ' + data.length+ '<br>';
                 for (i=0; i < data.length; i++) {
