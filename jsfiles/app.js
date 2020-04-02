@@ -14,7 +14,7 @@
             let email = document.getElementById('email').value;
             let emailTest = name.search( /^\w+([\.-]?\w+)*@\w+(\.-]?w+)*(\.\w{2,3})+$/);
             if (emailTest == -1 || email == ""){
-                alert ("please enter valid email here");
+                alert ("/home/zipporah/workspace/eduLibrarians/pages/index.htmlplease enter valid email here");
             };
 
     }
@@ -70,7 +70,7 @@ regEx();
       disp();
            }
             function disp() {
-                window.location = 'dashboard.html';
+                window.location = 'dash1.html';
                 var str ='';
                 str = 'total is ' + data.length+ '<br>';
                 for (i=0; i < data.length; i++) {

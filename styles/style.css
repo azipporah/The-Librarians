@@ -33,7 +33,7 @@ body{
     padding: 0;
     list-style: none;
     justify-content: space-between;
-    justify-items: ;
+    /* justify-items: ; */
 }
 .main-nav a{
     color: inherit;
@@ -93,7 +93,7 @@ body{
     align-items: stretch;
     justify-content: space-between;
     flex-grow: 0;
-      background-image: url(images/mine.png);
+      background-image: url(../images/mine.png);
       filter: grayscale();
 
     
@@ -108,7 +108,7 @@ body{
 }
 
 .home-main-section .books-image{
-    background-image: url(images/black-and-white-4270982_1280.png);
+    background-image: url(../images/books-1281581_1920.jpg);
     flex-grow: 1;
     max-height: 70vh;
     min-width: 30vw;
@@ -206,10 +206,10 @@ text-align: center;
     .home-main-section{
         justify-content: center;
     }
-    input[type=submit]{
+    /* input[type=submit]{
         
         
-    }
+    } */
 }
 
 
