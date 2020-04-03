@@ -13,7 +13,7 @@ function validate(){
 		
 		if (username1 == name[i] && password1 == pass[i]) {
 		alert ("Successfully logged in.");
-		window.location = "cris.html";
+		window.location = "dash1.html";
 		return false;
 	}
 	else{

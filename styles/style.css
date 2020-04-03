@@ -182,14 +182,17 @@ input[type=button]:hover{
 }
 
 .footer{
-background-color: #6D98C0;
-display: flex;
-justify-content: space-around;
-width: 100%;
-text-align: center;
-position: relative;
-left: 0;
-bottom: 0;
+    /* position: fixed; */
+    background-color: rgb(190, 176, 241);
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin-top: 300px;
+
 
 }
 .login{
@@ -211,6 +214,14 @@ text-align: center;
         
     } */
 }
+tr{
+    transition:all .25s ease-in-out;
+}
+tr:hover{
+   background-color: rgb(190, 176, 241);
+    cursor: pointer;
+}
+
 
 
 

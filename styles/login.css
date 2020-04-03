@@ -181,7 +181,7 @@ input[type=button]:hover{
 }
 
 .footer{
-background-color: #6D98C0;
+    background-color: rgb(190, 176, 241);
 display: flex;
 justify-content: space-around;
 width: 100%;

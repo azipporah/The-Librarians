@@ -1,0 +1,101 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dashboard1</title>
+        <link rel="stylesheet" type="text/css" href="../styles/books.css">
+        <link rel="stylesheet" href="../styles/dash1.css">
+         
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script src="../jsfiles/available.js"></script>
+
+    </head>
+    <body>
+      <div class="sidenav">
+    <div id="edu1">
+        <img id="edu2" src="../images/edu.png">
+       
+     </div>
+   
+  <a href="#"><i class="fa fa-home" style="font-size:25px"></i> Home</a>
+  
+
+     
+  <button class="dropbtn" onclick="myDropdown()"> <i class="fa fa-list" style="font-size:25px"></i> Categories 
+      <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="myDropdown" class="dropdown-content">
+      <a href="science.html">Science</a>
+       <a href="math.html">Mathematics</a>
+        <a href="tech.html">Tech Books</a>
+  
+ </div>
+  <a href="available.html"><i class="fa fa-book" style="font-size:25px"></i> Books</a>
+  <a href=""><i class="fa fa-check-square-o" style="font-size:25px"></i>   Borrowed</a>
+<button style="background-color: #DCD6F7; width: 130px;"  onclick="myPrompt();"> <i class="fa fa-plus-square-o" style="font-size:45px"></i><h3>   Add Books</h3></button>
+   <a href="/index.html"><i class="fa fa-power-off" style="font-size:25px"></i>   Logout</a>
+</div>
+
+
+<div class="content"> 
+  	<div id="wrapper" style="background-color: rgb(190, 176, 241);">	    
+        <h1>Welcome EDU LF!!</h1>
+        <h1>You can Add, Edit and Delete abook here.</h1>                         
+    </div> 
+</div>
+
+<div class="container"  id="cont"  style=" overflow:hidden; margin-top: 50px; font-size: 14px;margin-left: 300px;">
+    <table id="table" class="table table-bordered" style="width: 800px;">
+        <thead>
+            <tr style="background-color: rgb(190, 176, 241);">
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Love</td>
+                <td>Emmmerson Blair</td>
+                <td>3000</td>
+            </tr>
+            <tr>
+                <td>Javascript</td>
+                <td>Deitel</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td>Human analogy</td>
+                <td>Shannon James</td>
+                <td>4500</td>
+            </tr>
+        </thead>
+    </table>
+    <div class="form-group form-inline">                              
+        <input required id="title" type="text" class="form-control"  placeholder="Title" style="width: 150px;">
+        <input required id="author" type="text" class="form-control" placeholder="Author" style="width: 150px;">
+        <input required id="price" type="text" class="form-control" placeholder="Price" style="width: 150px;">
+        
+    </div>
+    <div >
+        <button id="entry" type="button" class="btn btn-primary" onclick="addingBook();">Add</button>
+        <button id="edit" type="button" class="btn btn-primary" onclick="editSelectedRow();">Edit</button>
+        <button id="dlt" type="button" class="btn btn-danger" onclick="removeSelectedRow();">Delete</button>                                  
+                 
+    </div>
+</div> 
+</div>
+
+<div class="footer">
+        <div>
+        <i class="fa fa-facebook-square" style="font-size:36px"></i>
+        <i class="fa fa-twitter-square" style="font-size:36px"></i>
+        <i class="fa fa-snapchat-square" style="font-size:36px"></i>
+    </div>
+ </div>
+    </body>
+</html>
+
+

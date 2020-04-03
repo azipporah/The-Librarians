@@ -1,29 +1,11 @@
-//toggling of the working hours div 
-// function myHours() {
-//   var work = document.getElementById("time");
-//   if (work.style.display === "none") {
-//     work.style.display = "block";
-//   } else {
-//     work.style.display = "none";
-//     }
-// }
-
-//shows the events and the new books.
-// function displayEvents(){
-//     document.getElementById("event").setAttribute("style","display:block");
-// }
-
-// function displayNew(){
-//     document.getElementById("new").setAttribute("style","display:block");
-   
-// }
-
     //get the table by id
     //create a new row and cells
     //get values from input text
     //set values into row cells  
     var rIndex;
     var table = document.getElementById("table");
+    // var container = document.getElementById("cont");
+    // container.appendChild(table);
 
     function addingBook(){                                   
         var newRow = table.insertRow(table.length);
