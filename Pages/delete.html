@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Add Books</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="../jsfiles/available.js"></script>
+<link rel="stylesheet" href="../styles/books.css">
+<link rel="stylesheet" href="../styles/add.css">
+
+</head>
+<body>
+
+<div class="sidenav">
+    <div id="edu1">
+    <a href="index.html"></a>    <img id="edu2" src="../images/edu.png">
+       </a>
+     </div>
+   
+  <a href="index.html"><i class="fa fa-home" style="font-size:25px"></i> Home</a>
+  
+
+     
+  <button class="dropbtn" onclick="myDropdown()"> <i class="fa fa-list" style="font-size:25px"></i> Categories 
+      <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="myDropdown" class="dropdown-content">
+      <a href="scince.html">Science</a>
+       <a href="math.html">Mathematics</a>
+        <a href="tech.html">Tech Books</a>
+  
+ </div>
+  <a href="available.html"><i class="fa fa-book" style="font-size:25px"></i> Books</a>
+  <a href="#"><i class="fa fa-check-square-o" style="font-size:25px"></i>   Borrowed</a>
+  <a href="index.html"><i class="fa fa-power-off" style="font-size:25px"></i>   Logout</a>
+  
+</div>
+
+<div class="content">
+ 
+  	<div id="wrapper">
+	    <header>
+	    	<div id="page-banner">
+	    		<h1 class="title">Manage Books</h1>
+          <p></p>
+          <form id="search-books">
+            <input type="text"  placeholder="Search books..." id="myInput" onkeyup="myFunction()" />
+          </form>
+	    	</div>
+	    </header>
+	    <div id="book-list">    
+	    	
+	     <div class="container" style=" overflow:hidden; margin-top: 100px; font-size: 14px;">
+                        <table id="table" class="table table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Price</th>
+                                </tr>
+                                <tr>
+                                    <td>Love</td>
+                                    <td>Emmmerson Blair</td>
+                                    <td>3000</td>
+                                </tr>
+                                <tr>
+                                    <td>Javascript</td>
+                                    <td>Deitel</td>
+                                    <td>5000</td>
+                                </tr>
+                                <tr>
+                                    <td>Human analogy</td>
+                                    <td>Shannon James</td>
+                                    <td>4500</td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <div class="form-group form-inline">                              
+                            <input required id="title" type="text" class="form-control"  placeholder="Title">
+                            <input required id="author" type="text" class="form-control" placeholder="Author">
+                            <input required id="price" type="text" class="form-control" placeholder="Price" >
+                            
+                        </div>
+
+                        <div >
+                            <button id="entry" type="submit" class="btn" onclick="addingBook();">Add</button>
+                            <button id="edit" type="submit" class="btn btn1" onclick="editSelectedRow();">Edit</button>
+                            <button id="dlt" type="submit" class="btn btn2" onclick="removeSelectedRow();">Delete</button>                                  
+                                         
+                        </div>
+                    </div> 	
+     </div>
+      </div>
+</div>
+
+
+<div class="footer">
+        <div>
+        <i class="fa fa-facebook-square" style="font-size:36px"></i>
+        <i class="fa fa-twitter-square" style="font-size:36px"></i>
+        <i class="fa fa-snapchat-square" style="font-size:36px"></i>
+    </div>
+<script>
+            var rIndex;
+            var table = document.getElementById("table");
+            function displayEvents(){
+                document.getElementById("event").setAttribute("style","display:block");
+            }
+           
+            function displayNew(){
+                document.getElementById("new").setAttribute("style","display:block");
+               
+            }
+
+                //get the table by id
+                //create a new row and cells
+                //get values from input text
+                //set values into row cells  
+                function addingBook(){                                   
+                    var newRow = table.insertRow(table.length);
+
+                    var cell1 = newRow.insertCell(0);
+                    var cell2 = newRow.insertCell(1);
+                    var cell3 = newRow.insertCell(2);
+
+                    var Title = document.getElementById("title").value;
+                    var Author = document.getElementById("author").value;
+                    var Price = document.getElementById("price").value;
+
+                    cell1.innerHTML = Title;
+                    cell2.innerHTML = Author;
+                    cell3.innerHTML = Price;
+
+                    bookRowToInput();
+                }
+
+                
+               //getting row index
+               function bookRowToInput(){
+                   
+                   for(var i = 1; i < table.rows.length; i++){
+                       
+                     table.rows[i].onclick = function(){
+                         //get the selected row index
+                        rIndex = this.rowIndex;
+                        document.getElementById("title").value = this.cells[0].innerHTML;
+                        document.getElementById("author").value = this.cells[1].innerHTML;
+                        document.getElementById("price").value = this.cells[2].innerHTML;
+                        
+                    };
+                   }
+               }
+               //call the function to set the event to the new row
+               bookRowToInput();
+
+               //edit a selected row
+                function editSelectedRow(){
+                   var Title = document.getElementById("title").value;
+                   var Author = document.getElementById("author").value;
+                   var Price = document.getElementById("price").value;
+
+                   table.rows[rIndex].cells[0].innerHTML = Title;
+                   table.rows[rIndex].cells[1].innerHTML = Author;
+                   table.rows[rIndex].cells[2].innerHTML = Price;
+               }
+
+              //delete a row from a table
+               function removeSelectedRow(){
+                   table.deleteRow(rIndex);
+               }
+
+
+               function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+            
+        </script>
+</body>
+</html>

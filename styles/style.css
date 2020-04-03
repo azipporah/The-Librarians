@@ -191,7 +191,7 @@ input[type=button]:hover{
     position: relative;
     left: 0;
     bottom: 0;
-    margin-top: 300px;
+    /* margin-top: 300px; */
 
 
 }
