@@ -1,22 +1,23 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Science Books</title>
+<title>Available Books</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="/available.js"></script>
-<link rel="stylesheet" href="../books.css">
+<link rel="stylesheet" href="/books.css">
 
 </head>
 <body>
 
 <div class="sidenav">
     <div id="edu1">
-    <a href="index.html"></a>    <img id="edu2" src="../images/edu.png">
-       </a>
+        <img id="edu2" src="images/edu.png">
+       
      </div>
    
-  <a href="index.html"><i class="fa fa-home" style="font-size:25px"></i> Home</a>
+  <a href="#"><i class="fa fa-home" style="font-size:25px"></i> Home</a>
   
 
      
@@ -24,13 +25,14 @@
       <i class="fa fa-caret-down"></i>
   </button>
   <div id="myDropdown" class="dropdown-content">
-      <a href="./science.html">Science</a>
-       <a href="./math.html">Mathematics</a>
+      <a href="science.html">History</a>
+       <a href="math.html">Math & Science</a>
         <a href="tech.html">Tech Books</a>
   
  </div>
   <a href="#"><i class="fa fa-book" style="font-size:25px"></i> Books</a>
   <a href="#"><i class="fa fa-check-square-o" style="font-size:25px"></i>   Borrowed</a>
+<a href="index.html"><i class="fa fa-power-off" style="font-size:25px"></i>   Logout</a>
   
 </div>
 
@@ -39,7 +41,7 @@
   	<div id="wrapper">
 	    <header>
 	    	<div id="page-banner">
-	    		<h1 class="title">Science</h1>
+	    		<h1 class="title">Available Books</h1>
           <p></p>
           <form id="search-books">
             <input type="text" placeholder="Search books..." id="myInput" onkeyup="myFunction()" />
@@ -50,46 +52,45 @@
 	    	<h2 class="title">Books to Read</h2>
 	    	<ul id="myUL">
 	    		<li>
-	    			<span class="name">Modern Physics</span>
+	    			<span class="name">Fundamentals Of HTML</span>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
-                    </span>
-                    
-	    		</li>
-	    		<li>
-                    <span class="name">Chemistry in Action</span>
-                    
-	    			<span class="delete">
-                        <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
-	    		</li>
-	    		<li>
-	    			<span class="name">Introduction to Biology</span>
-	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
                     </span>
 	    		</li>
 	    		<li>
-	    			<span class="name">Nelkon and Parker</span>
+                    <span class="name">Fundamentals Of CSS</span>
+                    
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                        <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
+	    		</li>
+	    		<li>
+	    			<span class="name">Fundamentals Of JavaScript</span>
+	    			<span class="delete">
+                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
+                    </span>
+	    		</li>
+	    		<li>
+	    			<span class="name">Html Grid Expalined</span>
+	    			<span class="delete">
+                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
                     </span>
                 </li>
                 <li>
-	    			<span class="name">Fluid Mechanics</span>
+	    			<span class="name">Principles of Mathematics</span>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
                     </span>
                 </li>
                  <li>
-	    			<span class="name">Blood Transfusion and Cells</span>
+	    			<span class="name">Biogoly Comprehesion</span>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
                     </span>
                 </li>
                  <li>
-	    			<span class="name">Botany</span>
+	    			<span class="name">History of East Africa</span>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
                     </span>
 	    		</li>
 	    	</ul>
