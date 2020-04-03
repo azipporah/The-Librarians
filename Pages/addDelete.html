@@ -45,16 +45,6 @@
                         <button class="btn btn-secondary" type="button">
                             <i class="fa fa-search"></i>
                         </button>
-                    </div>            
-                      
-                    <!--Working hours-->
-                    <div style="float: right;width: 150px;"><button class="btn btn-secondary" style=" margin-left: 120px; margin-top: -38px;margin-left: 100px;" onclick="myHours()">Working hours</button></div>
-                   
-
-                     <!--User icon on the top-right of the home page-->
-                    <div style=" float: right;width: 150px;height: 50px;">
-                        <a href="#"><i class="fa fa-user-o fa-3x" aria-hidden="true" style="float: right; margin-top: -30px;" ></i></a>
-                        <h4 style=" margin-left: 85px; margin-top: -20px;">User</h4>
                     </div>
                     <div class="container" style=" overflow:hidden; margin-top: 50px; font-size: 14px;">
                         <table id="table" class="table table-bordered" style="width: 800px;">
@@ -95,59 +85,8 @@
                         </div>
                     </div> 
                 </div>
-                <div id="time">
-                    <h1>Working hours:</h1>
-                    <ol style="font-size: 12px;">
-                        <li>Monday:    10:00am - 5:00pm</li>
-                        <li>Tuesday:   10:00am - 5:00pm</li>
-                        <li>Wednesday: 10:00am - 5:00pm</li>
-                        <li>Thursday:  10:00am - 5:00pm</li>
-                        <li>Friday:    10:00am - 5:00pm</li>
-                        <li>Saturday:  10:00am - 3:00pm</li>
-                    </ol>
-                </div>
                 
-                    <div id="event">
-                        <h1>Upcoming events:</h1>
-                        <ol>
-                            <li>Guest speaker from the impaired society of Uganda.
-                                <ul>
-                                    <li>Date: 22nd April 2020.</li>
-                                    <li>Time: 2:00pm - 4:00pm</li>
-                                    <li>Venue: Outbox conference room.</li>
-                                    <li>Location: Outbox 4th Floor, Soliz House,Plot 23 Lumumba Ave, Kampala-Uganda. </li>
-                                </ul>
-                            </li>
-                            <li>Project presentaion.
-                                <ul>
-                                    <li>Date: 3rd April 2020.</li>
-                                    <li>Time: 9:00am</li>
-                                    <li>Medium: Zoom conference calls.</li>
-                                    <li style="color: red;">A must attend for all.</li>
-                                </ul>
-                            </li>
-                        </ol>
-                    </div>
-                    <!-- <div id="new">
-                        <div style="font-size: 14px;width: 200px;">
-                            <h1>New Books!!</h1>
-                            <img src="images/elonMusk.png" alt="Elon Mask" style="width: 170px; height: 240px;">
-                            <div>
-                                <p><strong>Title: </strong>Elon Mask</p>
-                                <p><strong>Author: </strong>Ashlee Vance</p>
-                                <p><strong>Price: </strong>000Ug.shs a week.</p>
-                            </div>
-                        </div>
-                        <div style="font-size: 14px;width: 250px;margin-top: -335px;margin-left: 250px;">
-                            <img src="images/2ndMachineAge.png" alt="2ndMachineAge" style="width: 170px; height: 242px; ">
-                            <div >
-                                <p><strong>Title:</strong>The Second Machine Age.</p>
-                                <p><strong>Author:</strong>Andrew McCafe.</p>
-                                <p><strong>Price:</strong>5000Ug.shs a week.</p>
-                            </div>  
-                        </div>
-                    </div> -->
-
+                   
                 <div class="footer">
                     <div>
                     <i class="fa fa-facebook-square" style="font-size:36px"></i>
@@ -156,6 +95,95 @@
                 </div>
             </div>
             
-        </div>           
+        </div>  
+        <script>
+            //get the table by id
+       //create a new row and cells
+       //get values from input text
+       //set values into row cells  
+       var rIndex;
+       var table = document.getElementById("table");
+       // var container = document.getElementById("cont");
+       // container.appendChild(table);
+   
+       function addingBook(){                                   
+           var newRow = table.insertRow(table.length);
+   
+           var cell1 = newRow.insertCell(0);
+           var cell2 = newRow.insertCell(1);
+           var cell3 = newRow.insertCell(2);
+   
+           var Title = document.getElementById("title").value;
+           var Author = document.getElementById("author").value;
+           var Price = document.getElementById("price").value;
+   
+           cell1.innerHTML = Title;
+           cell2.innerHTML = Author;
+           cell3.innerHTML = Price;
+   
+           bookRowToInput();
+       }
+   
+       
+      //getting row index
+      function bookRowToInput(){
+          
+          for(var i = 1; i < table.rows.length; i++){
+              
+            table.rows[i].onclick = function(){
+                //get the selected row index
+               rIndex = this.rowIndex;
+               document.getElementById("title").value = this.cells[0].innerHTML;
+               document.getElementById("author").value = this.cells[1].innerHTML;
+               document.getElementById("price").value = this.cells[2].innerHTML;
+               
+           };
+          }
+      }
+      //call the function to set the event to the new row
+      bookRowToInput();
+   
+      //edit a selected row
+       function editSelectedRow(){
+          var Title = document.getElementById("title").value;
+          var Author = document.getElementById("author").value;
+          var Price = document.getElementById("price").value;
+   
+          table.rows[rIndex].cells[0].innerHTML = Title;
+          table.rows[rIndex].cells[1].innerHTML = Author;
+          table.rows[rIndex].cells[2].innerHTML = Price;
+      }
+   
+     //delete a row from a table
+      function removeSelectedRow(){
+          table.deleteRow(rIndex);
+      }
+   
+      function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+   
+   
+   
+    </script>
+            
     </body>
 </html>
