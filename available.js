@@ -1,97 +1,3 @@
-document.addEventListener('DOMContentLoaded', function(){
-
-  const list = document.querySelector('#book-list ul');
-  const forms = document.forms;
-
-  // // delete books
-  // list.addEventListener('click', (e) => {
-  //   if(e.target.className == 'delete'){
-  //     const li = e.target.parentElement;
-  //     li.parentNode.removeChild(li);
-  //   }
-  // }); 
-
-
-// var motor = ["engine","oil","gas"];
-// reverse.motor();
-
-// var numbers = [3,4,6,7];
-// var newArray = [];
-// for (i=numbers.length-1; i>=0; i--){
-//   newArray.push(numbers[i]);
-
-// }
-
-// console.log(newArray);
-
-  // add books
-  const addForm = forms['add-book'];
-  addForm.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    // create elements
-    const value = addForm.querySelector('input[type="text"]').value;
-    const li = document.createElement('li');
-    const bookName = document.createElement('span');
-    const deleteBtn = document.createElement('span');
-
-    // add text content
-    bookName.textContent = value;
-    deleteBtn.textContent = 'delete';
-
-    // add classes
-    bookName.classList.add('name');
-    deleteBtn.classList.add('delete');
-
-    // append to DOM
-    li.appendChild(bookName);
-    li.appendChild(deleteBtn);
-    list.appendChild(li);
-  });
-
-  // hide books
-  const hideBox = document.querySelector('#hide');
-  hideBox.addEventListener('change', function(e){
-    if(hideBox.checked){
-      list.style.display = "none";
-    } else {
-      list.style.display = "initial";
-    }
-  });
-
-  // filter books
-  const searchBar = forms['search-books'].querySelector('input');
-  searchBar.addEventListener('keyup', (e) => {
-    const term = e.target.value.toLowerCase();
-    const books = list.getElementsByTagName('li');
-    Array.from(books).forEach((book) => {
-      const title = book.firstElementChild.textContent;
-      if(title.toLowerCase().indexOf(e.target.value) != -1){
-        book.style.display = 'block';
-      } else {
-        book.style.display = 'none';
-      }
-    });
-  });
-
-  // tabbed content
-  const tabs = document.querySelector('.tabs');
-  const panels = document.querySelectorAll('.panel');
-  tabs.addEventListener('click', (e) => {
-    if(e.target.tagName == 'LI'){
-      const targetPanel = document.querySelector(e.target.dataset.target);
-      Array.from(panels).forEach((panel) => {
-        if(panel == targetPanel){
-          panel.classList.add('active');
-        }else{
-          panel.classList.remove('active');
-        }
-      });
-    }
-  });
-
-})
-
 
 //dropdown menu
 function myDropdown() {
@@ -111,3 +17,44 @@ window.onclick = function(event) {
     }
   }
 }
+
+function myPrompt(){
+    
+    let userRole = prompt("Plaese Enter password");
+    switch(userRole){
+        case "edu lf":
+            alert ("Logged in as LF");
+            window.location = "add.html";
+            break;
+        case "staff":
+            alert ("Logged in as Staff");
+            window.location = 'add.html';
+            break;
+            default:
+                alert ("Permission Denied");    
+    }
+}
+
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+
