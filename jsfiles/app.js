@@ -1,5 +1,26 @@
 
-   
+function check(){
+
+let name = document.getElementById('username').value;
+let email = document.getElementById('email').value;
+let password = document.getElementById('password').value;
+
+if(name.length < 3){
+    alert ("name must conatin more than 3 characters");
+    return false;
+} else if(email.length < 4){
+    alert ("Inavlid email try again.");
+    return false;
+} else if(password.length < 3 ){
+    alert ("password is too short");
+    return false;
+} else{
+    insert();
+    
+}
+
+
+}   
 
     function regEx(){
     function testName(){
@@ -66,7 +87,7 @@ regEx();
       document.getElementById('password').value ='';
       document.getElementById('email').value ='';
 
-      
+      check();
       disp();
            }
             function disp() {
@@ -78,6 +99,7 @@ regEx();
                 }
                 alert ("Successfully Registered. Welcome!");    
               
+
                  }
                 
         
