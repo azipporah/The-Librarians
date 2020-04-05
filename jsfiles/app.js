@@ -28,6 +28,28 @@ function selectRole(){
     //    return false;
     window.location.href=document.getElementById('role').value;
    }
+function check(){
+
+let name = document.getElementById('username').value;
+let email = document.getElementById('email').value;
+let password = document.getElementById('password').value;
+
+if(name.length < 3){
+    alert ("name must conatin more than 3 characters");
+    return false;
+} else if(email.length < 4){
+    alert ("Inavlid email try again.");
+    return false;
+} else if(password.length < 3 ){
+    alert ("password is too short");
+    return false;
+} else{
+    insert();
+    
+}
+
+
+}   
 
    //Validation on kind of input required
     function regEx(){
@@ -97,7 +119,9 @@ regEx();
 
       
     //   disp();
+        check();
       selectRole();
+      
     }
    
             // function disp() {
@@ -110,6 +134,21 @@ regEx();
             //     alert ("Successfully Registered. Welcome!");    
               
             //      }
+      
+
+    //   disp();
+    //        }
+    //         function disp() {
+    //             window.location = '../Pages/dash1.html';
+    //             var str ='';
+    //             str = 'total is ' + data.length+ '<br>';
+    //             for (i=0; i < data.length; i++) {
+    //                 str += i + ':' +data[i]+ "<br>";
+    //             }
+    //             alert ("Successfully Registered. Welcome!");    
+              
+
+    //              }
                 
         
             
