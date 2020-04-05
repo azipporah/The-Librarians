@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="../jsfiles/app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>EduLibrary</title>
+</head>
+
+<body class="container full-height-grow">
+    <header class="main-header">
+        <a href="index.html" class="brand-logo">
+        <img src="../images/edu.png">
+        <div class="bran-logo-name"></div>
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="aboutUs.html">About Us</a></li>
+               <li><a href="contactUs.html">Contact Us</a></li>
+               <li><a href="login.html">Login</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <section class="home-main-section">
+        <div class="call-to-action">
+            <h1 class="title">EduLibrary</h1>
+            <p class="subtitle">Access over 10,000 books with just a single click.</p>
+            <button class="btn">Join us</button>
+        </div>
+        <div id="display"></div>
+        <div class="form-div">
+            <form name="form1" class="form">
+                
+                <h1>Register</h1>
+                <hr>
+                
+                <input type="text" id="username" placeholder="Username" name="username" required><br>
+                <input type="text" id="email" placeholder="Email" name="email" required><br>
+                <div>
+                <select name="role" id="role">
+                    <option value="Student">Student</option>
+                    <option value="EDU LF">EDU LF</option>
+                    <option value="Staff">Staff</option>
+                </select>
+                </div>
+                <input type="password" id="password" placeholder="Password" required><br>
+                    <div>
+                <input type="submit" value="Register" onclick="check();" > <br>
+               
+                    </div>
+            <div class="login">
+                <p>Already have an account?<a href="login.html">Login</a></p>
+            </div>
+        
+        </form>
+        <div id="values"></div>
+    </div>
+    </section>
+            
+    </div>
+    <div class="footer">
+        <div>
+        <i class="fa fa-facebook-square" style="font-size:36px"></i>
+        <i class="fa fa-twitter-square" style="font-size:36px"></i>
+        <i class="fa fa-snapchat-square" style="font-size:36px"></i>
+    </div>
+</body>
+   
+</html>
+
+
