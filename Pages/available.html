@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="../jsfiles/available.js"></script>
+<script src="../jsfiles/search.js"></script>
 <link rel="stylesheet" href="../styles/books.css">
 
 </head>
@@ -25,8 +26,8 @@
       <i class="fa fa-caret-down"></i>
   </button>
   <div id="myDropdown" class="dropdown-content">
-      <a href="science.html">History</a>
-       <a href="math.html">Math & Science</a>
+      <a href="science.html">Science</a>
+       <a href="math.html">Math</a>
         <a href="tech.html">Tech Books</a>
   
  </div>
@@ -44,7 +45,7 @@
 	    		<h1 class="title">Available Books</h1>
           <p></p>
           <form id="search-books">
-            <input type="text" placeholder="Search books..." id="myInput" onkeyup="myFunction()" />
+            <input type="text" placeholder="Search books..." id="search" onkeyup="myFunction()" />
           </form>
 	    	</div>
 	    </header>
@@ -52,45 +53,44 @@
 	    	<h2 class="title">Books to Read</h2>
 	    	<ul id="myUL">
 	    		<li>
-	    			<span class="name">Fundamentals Of HTML</span>
+	    			<a class="name">Fundamentals Of HTML</a>
 	    			<span class="delete">
                           <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
                     </span>
 	    		</li>
 	    		<li>
-                    <span class="name">Fundamentals Of CSS</span>
-                    
+                    <a class="name">Fundamentals Of CSS</a>                    
 	    			<span class="delete">
-                        <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                    <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
 	    		</li>
 	    		<li>
-	    			<span class="name">Fundamentals Of JavaScript</span>
+	    			<a class="name">Fundamentals Of JavaScript</a>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                    <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
                     </span>
 	    		</li>
 	    		<li>
-	    			<span class="name">Html Grid Expalined</span>
+	    			<a class="name">Html Grid Expalined</a>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                    <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
                     </span>
                 </li>
                 <li>
-	    			<span class="name">Principles of Mathematics</span>
+	    			<a class="name">Principles of Mathematics</a>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                    <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
                     </span>
                 </li>
                  <li>
-	    			<span class="name">Biogoly Comprehesion</span>
+	    			<a class="name">Biogoly Comprehesion</a>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                    <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
                     </span>
                 </li>
                  <li>
-	    			<span class="name">History of East Africa</span>
+	    			<a class="name">History of East Africa</a>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
+                    <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/></span>
                     </span>
 	    		</li>
 	    	</ul>
@@ -104,7 +104,27 @@
         <i class="fa fa-twitter-square" style="font-size:36px"></i>
         <i class="fa fa-snapchat-square" style="font-size:36px"></i>
     </div>
+<script>
+    
 
+//  // Loop through the ul list and hide those book titles that don't match the search query
+// function myFunction() {
+//     var input, filter, ul, li, a, i, txtValue;
+//     input = document.getElementById("search");
+//     filter = input.value.toUpperCase();
+//     ul = document.getElementById("myUL");
+//     li = ul.getElementsByTagName("li");
+//     for (i = 0; i < li.length; i++) {
+//         a = li[i].getElementsByTagName("a")[0];
+//         txtValue = a.textContent || a.innerText;
+//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//             li[i].style.display = "";
+//         } else {
+//             li[i].style.display = "none";
+//         }
+//     }
+// }
+// </script>
 
 </body>
 </html>

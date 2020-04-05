@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="../jsfiles/available.js"></script>
+<script src="../jsfiles/search.js"></script>
 <link rel="stylesheet" href="../styles/books.css">
 
 </head>
@@ -13,19 +14,15 @@
 
 <div class="sidenav">
     <div id="edu1">
-        <img id="edu2" src="../images/edu.png">
-       
-     </div>
-   
+        <img id="edu2" src="../images/edu.png">       
+     </div>   
   <a href="dash1.html"><i class="fa fa-home" style="font-size:25px"></i> Home</a>
-  
 
-     
   <button class="dropbtn" onclick="myDropdown()"> <i class="fa fa-list" style="font-size:25px"></i> Categories 
       <i class="fa fa-caret-down"></i>
   </button>
   <div id="myDropdown" class="dropdown-content">
-      <a href="scince.html">Science</a>
+      <a href="science.html">Science</a>
        <a href="math.html">Mathematics</a>
         <a href="tech.html">Tech Books</a>
   
@@ -43,7 +40,7 @@
 	    		<h1 class="title">Technology Books</h1>
           <p></p>
           <form id="search-books">
-            <input type="text" placeholder="Search books..." id="myInput" onkeyup="myFunction()" />
+            <input type="text" placeholder="Search books..." id="search" onkeyup="myFunction()" />
           </form>
 	    	</div>
 	    </header>
@@ -51,59 +48,77 @@
 	    	<h2 class="title">Books to Read</h2>
 	    	<ul id="myUL">
 	    		<li>
-	    			<span class="name">Fundamentals Of HTML</span>
+	    			<a class="name">Fundamentals Of HTML</a>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
-                    </span>
+              <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/>
+           </span>
 	    		</li>
 	    		<li>
-                    <span class="name">Fundamentals Of CSS</span>
-                    
-	    			<span class="delete">
-                        <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
+              <a class="name">Fundamentals Of CSS</a>                    
+	    			  <span class="delete">
+                <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/>
+              </span>
 	    		</li>
 	    		<li>
-	    			<span class="name">Fundamentals Of JavaScript</span>
+	    			<a class="name">Fundamentals Of JavaScript</a>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
-                    </span>
+              <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/>
+            </span>
 	    		</li>
 	    		<li>
-	    			<span class="name">Introduction to Python</span>
+	    			<a class="name">Introduction to Python</a>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
-                    </span>
-                </li>
-                <li>
-	    			<span class="name">Internet Programming</span>
+              <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/>
+            </span>
+          </li>
+          <li>
+	    			<a class="name">Internet Programming</a>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
-                    </span>
-                </li>
-                 <li>
-	    			<span class="name">Kotlin Introduction</span>
+              <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/>
+            </span>
+          </li>
+          <li>
+	    			<a class="name">Kotlin Introduction</a>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
-                    </span>
-                </li>
-                 <li>
-	    			<span class="name">C#,C++ OOP principles</span>
+              <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/>
+            </span>
+          </li>
+          <li>
+	    			<a class="name">C#,C++ OOP principles</a>
 	    			<span class="delete">
-                          <input onclick="this.value='Borrowed'" type="button" class="delete" value="Borrow"/></span>
-                    </span>
+              <input onclick="this.value='Borrowed'" type="button" class="delete" value="Available"/>
+            </span>
 	    		</li>
 	    	</ul>
 	    </div>
 </div>
 
 
-<div class="footer">
+    <div class="footer">
         <div>
         <i class="fa fa-facebook-square" style="font-size:36px"></i>
         <i class="fa fa-twitter-square" style="font-size:36px"></i>
         <i class="fa fa-snapchat-square" style="font-size:36px"></i>
     </div>
 
-
+    <!-- <script>
+      // Loop through the ul list and hide those book titles that don't match the search query
+      function myFunction() {
+       var input, filter, ul, li, a, i, txtValue;
+       input = document.getElementById("search");
+       filter = input.value.toUpperCase();
+       ul = document.getElementById("myUL");
+       li = ul.getElementsByTagName("li");
+       for (i = 0; i < li.length; i++) {
+           a = li[i].getElementsByTagName("a")[0];
+           txtValue = a.textContent || a.innerText;
+           if (txtValue.toUpperCase().indexOf(filter) > -1) {
+               li[i].style.display = "";
+           } else {
+               li[i].style.display = "none";
+           }
+       }
+   }
+   </script> -->
 </body>
 </html>
