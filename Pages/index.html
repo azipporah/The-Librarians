@@ -7,6 +7,7 @@
     <script src="../jsfiles/app.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>EduLibrary</title>
+    
 </head>
 
 <body class="container full-height-grow">
@@ -32,7 +33,7 @@
         </div>
         <div id="display"></div>
         <div class="form-div">
-            <form name="form1" class="form">
+            <form name="form1" class="form" onsubmit="return selectRole();">
                 
                 <h1>Register</h1>
                 <hr>
@@ -41,9 +42,9 @@
                 <input type="text" id="email" placeholder="Email" name="email" required><br>
                 <div>
                 <select name="role" id="role">
-                    <option value="Student">Student</option>
-                    <option value="EDU LF">EDU LF</option>
-                    <option value="Staff">Staff</option>
+                    <option value="dash1.html" >Student</option>
+                    <option value="eduLf.html">EDU LF</option>
+                    <option value="dash1.html">Staff</option>
                 </select>
                 </div>
                 <input type="password" id="password" placeholder="Password" required><br>

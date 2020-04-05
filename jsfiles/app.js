@@ -1,6 +1,35 @@
+  //Selecting role at register time.
 
-   
+//   function selectRole(){
+//     let select = getElementById("role");
+//     let role = select.getElementsByTagName("option");
+//     for (i = 0; i < select.length; i++) {
+//     switch(role){
+//         case "Student":
+//             alert ("Logged in as Student");
+//             window.location = "dash1.html";
+//             break;
+//         case "Staff":
+//             alert ("Logged in as Staff");
+//             window.location = 'dash1.html';
+//             break;
+//         case "EDU LF":
+//             alert ("Logged in as EDU LF");
+//             window.location = 'eduLf.html';
+//             break;
+//             default:
+//                 alert ("Permission Denied");    
+//     }
+// }
+// }
 
+//Selecting different role on registration.
+function selectRole(){
+    //    return false;
+    window.location.href=document.getElementById('role').value;
+   }
+
+   //Validation on kind of input required
     function regEx(){
     function testName(){
             let name = document.getElementById('username').value;
@@ -38,7 +67,7 @@ function validate(){
 		
 		if (username1 == name[i] && password1 == pass[i]) {
 		alert ("Succefully Logged in!");
-		window.location = "dashboard.html";
+		window.location = "dash1.html";
 		return false;
 	}
 	else{
@@ -67,18 +96,20 @@ regEx();
       document.getElementById('email').value ='';
 
       
-      disp();
-           }
-            function disp() {
-                window.location = '../Pages/dash1.html';
-                var str ='';
-                str = 'total is ' + data.length+ '<br>';
-                for (i=0; i < data.length; i++) {
-                    str += i + ':' +data[i]+ "<br>";
-                }
-                alert ("Successfully Registered. Welcome!");    
+    //   disp();
+      selectRole();
+    }
+   
+            // function disp() {
+            //     window.location = '../Pages/eduLf.html';
+            //     var str ='';
+            //     str = 'total is ' + data.length+ '<br>';
+            //     for (i=0; i < data.length; i++) {
+            //         str += i + ':' +data[i]+ "<br>";
+            //     }
+            //     alert ("Successfully Registered. Welcome!");    
               
-                 }
+            //      }
                 
         
             

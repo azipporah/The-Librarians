@@ -20,16 +20,16 @@ window.onclick = function(event) {
 
 function myPrompt(){
     
-    let userRole = prompt("Plaese Enter password");
+    let userRole = prompt("Please Enter password");
     switch(userRole){
         case "edu lf":
             alert ("Logged in as LF");
             window.location = "delete.html";
             break;
-        case "staff":
-            alert ("Logged in as Staff");
-            window.location = 'delete.html';
-            break;
+        // case "staff":
+        //     alert ("Logged in as Staff");
+        //     window.location = 'delete.html';
+        //     break;
             default:
                 alert ("Permission Denied");    
     }
