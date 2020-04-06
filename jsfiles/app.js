@@ -42,7 +42,7 @@ if(name.length < 3){
             let email = document.getElementById('email').value;
             let emailTest = name.search( /^\w+([\.-]?\w+)*@\w+(\.-]?w+)*(\.\w{2,3})+$/);
             if (emailTest == -1 || email == ""){
-                alert ("/home/zipporah/workspace/eduLibrarians/pages/index.htmlplease enter valid email here");
+                alert ("/home/zipporah/workspace/eduLibrarians/index.html please enter valid email here");
             };
 
     }
@@ -66,7 +66,7 @@ function validate(){
 		
 		if (username1 == name[i] && password1 == pass[i]) {
 		alert ("Succefully Logged in!");
-		window.location = "dash1.html";
+		window.location = "./Pages/dash1.html";
 		return false;
 	}
 	else{
