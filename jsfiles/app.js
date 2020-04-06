@@ -12,7 +12,7 @@ let email = document.getElementById('email').value;
 let password = document.getElementById('password').value;
 
 if(name.length < 3){
-    alert ("name must conatin more than 3 characters");
+    // alert ("name must conatin more than 3 characters");
     return false;
 } else if(email.length < 4){
     alert ("Inavlid email try again.");
