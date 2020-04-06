@@ -1,27 +1,4 @@
-  //Selecting role at register time.
 
-//   function selectRole(){
-//     let select = getElementById("role");
-//     let role = select.getElementsByTagName("option");
-//     for (i = 0; i < select.length; i++) {
-//     switch(role){
-//         case "Student":
-//             alert ("Logged in as Student");
-//             window.location = "dash1.html";
-//             break;
-//         case "Staff":
-//             alert ("Logged in as Staff");
-//             window.location = 'dash1.html';
-//             break;
-//         case "EDU LF":
-//             alert ("Logged in as EDU LF");
-//             window.location = 'eduLf.html';
-//             break;
-//             default:
-//                 alert ("Permission Denied");    
-//     }
-// }
-// }
 
 //Selecting different role on registration.
 function selectRole(){
@@ -75,7 +52,7 @@ if(name.length < 3){
     
     }
 
-    
+   //function to validate user login 
 function validate(){
 	
 	let username1 = document.getElementById("username").value;
@@ -118,37 +95,11 @@ regEx();
       document.getElementById('email').value ='';
 
       
-    //   disp();
+    
         check();
       selectRole();
       
     }
-   
-            // function disp() {
-            //     window.location = '../Pages/eduLf.html';
-            //     var str ='';
-            //     str = 'total is ' + data.length+ '<br>';
-            //     for (i=0; i < data.length; i++) {
-            //         str += i + ':' +data[i]+ "<br>";
-            //     }
-            //     alert ("Successfully Registered. Welcome!");    
-              
-            //      }
-      
-
-    //   disp();
-    //        }
-    //         function disp() {
-    //             window.location = '../Pages/dash1.html';
-    //             var str ='';
-    //             str = 'total is ' + data.length+ '<br>';
-    //             for (i=0; i < data.length; i++) {
-    //                 str += i + ':' +data[i]+ "<br>";
-    //             }
-    //             alert ("Successfully Registered. Welcome!");    
-              
-
-    //              }
                 
         
             

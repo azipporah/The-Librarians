@@ -26,10 +26,7 @@ function myPrompt(){
             alert ("Logged in as LF");
             window.location = "delete.html";
             break;
-        // case "staff":
-        //     alert ("Logged in as Staff");
-        //     window.location = 'delete.html';
-        //     break;
+       
             default:
                 alert ("Permission Denied");    
     }
